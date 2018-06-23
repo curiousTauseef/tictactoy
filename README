@@ -1,0 +1,66 @@
+                         *******************************
+                         * Welcome to TicTacToe 2 Game *
+                         *******************************
+Developer : Maha Mahmoud Hamza
+Language Used: Java
+Application Type: Console Application
+
+  
+How To Run:
+___________
+   ***Initialzations***
+      --------------
+-Input are being read from configs file"default", if you want to change the file path please provide
+ the new path in Messages.java, FILE_PATH variable.
+ Remember that your system will exit if the file path is invalid
+-in file configs , read data on the form board_size,player1_symbol,player2_symbol,player3_symbol
+ defaults are set to 3,M,N,C change values to configure new Data
+ P.S. Validations are applied to input , in case of wrong data , system will terminated with warning message
+ 
+
+if you are running the maven application do the following:
+  -import the project into eclipse
+  -run maven update to get libraries ... etc
+  - if you gonna run it from eclipse just choose TicTacToe as your Main Starter Class, 
+  if you gonna run it as a jar everything is configured in pom.xml just be sure that 
+  you run mvn clean install command then run java -jar MetroGroupAG-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+   
+
+Strategy and Algorithm:
+_______________________
+First of all we have two types of players,
+   (a) Human Player    (b)Computer as a Player
+the players according to the requirements are three , 2 humans and 1 computer players
+humans should choose their inputs , computer move randomly according to the empty slots 
+P.S. (Edit if i have time or for the future,make computer play smart enough, it will depend on scanning the board 
+before every computer move to check empty slots and pick best position instead of random moves)
+
+1- initial check on data input , if it violate the game role, system will show warning and terminate
+   otherwise game will be initiated and started
+
+2- when game starts , random player is being chosen and announced from the 3 players and prompted "if human player is chosen"
+   to input his move
+
+3- if the player is human , then input is taken and validated, if it's invalid , warning message will
+ be displayed and re-ask the player to enter the input again otherwise it will proceed in moving action
+ if the chosen position is not available it show warning and ask to re-enter the input again otherwise
+ play is placed and a check for winner is being run, if their is a winner, he is announced and game is ended, if no winner check on 
+ the board if it's full or their is a place for next play before proceeding.
+ 
+4- if the computer is the player , random position is generated,and a check for empty position is done , if not , anew random 
+position is being generated until one fit an empty position and a winner/draw check is done otherwise call for next player.
+
+Players are being chosen in turn after the random start player is choosing
+ 
+
+
+
+
+Design Patterns Used:
+_____________________
+1- Singleton Design Pattern - used in Game Manager as it's necessary to have just one instance of it along the game life
+2- MVC Design Pattern - for separation of concerns
+3- Observer Design Pattern - since their are many relations between objects , so notification medium must be used to alert changes
+4- Factory Design Pattern - since we have two types of player, so Factory pattern is the robust and i can hide the identity of the players 
+   and give just necessary info
+
