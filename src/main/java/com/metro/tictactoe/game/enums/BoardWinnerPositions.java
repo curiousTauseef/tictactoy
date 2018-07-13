@@ -6,5 +6,5 @@ package com.metro.tictactoe.game.enums;
  *
  */
 public enum BoardWinnerPositions {
-	HORIZONTAL, VERTICAL, LEFT_DIAGONAL, RIGHT_DIAGONAL;
+	HORIZONTAL, VERTICAL, LEFT_DIAGONAL, RIGHT_DIAGONAL,EDGE;
 }
